@@ -4,12 +4,13 @@ import BookList from '../../components/BookList/BookList';
 import Header from '../../components/Header/Header';
 import NavbarComp from '../../components/NavbarComp/NavbarComp';
 
-const Home = () => {
+const Home = ({search, setSearch, handleSearch, books}) => {
+
     return (
         <div className="home">
             <NavbarComp />
-            <Header />
-            <BookList />
+            <Header search={search} setSearch={setSearch} handleSearch={handleSearch} />
+            <BookList books={books}/>
         </div>
     )
 }
