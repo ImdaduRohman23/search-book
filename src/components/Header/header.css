@@ -1,10 +1,23 @@
 .header {
     display: flex;
     justify-content: center;
-    flex-direction: column;
     text-align: center;
-    background: linear-gradient(rgba(255, 255, 204, 50%), rgba(255, 255, 204, 50%)) , url(../../images/library-img.jpg);
-    background-size: 100%;
+    align-items: center;
+    background: url(../../images/header2.jpg);
+    background-position-y: -140px;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 75vh;
+    height: 80vh;
+    gap: 20px;
+}
+
+.header__content {
+    background-color: rgba(255, 0, 0, 80%);
+    padding: 25px;
+    border-radius: 25px;
+}
+
+h3 {
+    color: aliceblue;
+    margin-bottom: 50px;
 }
