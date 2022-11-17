@@ -1,0 +1,50 @@
+.bookList {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    background-color: #efefef;
+}
+
+.bookList-container {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.bookList__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20%;
+    padding: 25px;
+    background-color: #080706;
+    gap: 10px;
+    border-radius: 20px;
+}
+
+.bookList__card-img {
+    margin-left: auto;
+    margin-right: auto;
+    height: 180px;
+    overflow: hidden;
+}
+
+.bookList__card-img img {
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #efefef;
+}
+
+.bookList__card-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 1rem;
+    background-color: #d1b280;
+    height: 40%;
+    border-radius: 5px;
+    padding: 5px;
+}
