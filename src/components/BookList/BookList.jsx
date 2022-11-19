@@ -1,15 +1,27 @@
 import React from 'react';
 import './booklist.css';
-const BookList = ({books}) => {
+import ReactLoading from 'react-loading';
+
+const BookList = ({books, loading}) => {
     console.log(books)
 
     return (
         <div className='bookList'>
-            <div className="bookList-container">
+            {
+                !!books.length ? <h3>Your search result . . .</h3> : <h3>Let's find your book . . .</h3>
+            }
+
+            {
+                loading && <ReactLoading type='spin' color='red' height={667} width={375} />
+            }
+
+            {
+                books.length &&
+                <div className="bookList-container">
                 {
                     books.map(book => {
                         return (
-                            <div className='bookList__card'>
+                            <div className='bookList__card' key={book.id}>
                                 <div className="bookList__card-img">
                                     <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail}  alt="" />
                                 </div>
@@ -18,17 +30,10 @@ const BookList = ({books}) => {
                                 </div>
                             </div>
                             )
-                            {/* <h5>
-                                {book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail}
-                                {book.volumeInfo.title}
-                            </h5>
-                            <div className="bookList__item">
-
-                            </div>
-                        </> */}
                     })
                 }
             </div>
+            }
         </div>
     )
 }

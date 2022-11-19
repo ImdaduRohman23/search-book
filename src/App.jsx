@@ -6,13 +6,19 @@ import axios from 'axios';
 const App = () => {
     const [search, setSearch] = useState('');
     const [books, setBooks] = useState([]);
+    const [loading, setLoading] = useState(false);
     const url = `https://www.googleapis.com/books/v1/volumes?q=${search}&key=AIzaSyBiTD8AtRYmnM8QiKCFIJspOqdWIrpVi1Q`
 
     const getDataBooks = () => {
+        setLoading(true);
         axios.get(url)
-            .then(res => setBooks(res.data.items))
-            .catch(err => console.log(err))
-    }
+            .then(res => {
+                setBooks(res.data.items)
+                setLoading(false)
+            })
+            .catch(err => console.log(err));
+        
+        }
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -23,7 +29,7 @@ const App = () => {
     return (
         <div className='app'>
             <div className="app-container">
-                <Home search={search} setSearch={setSearch} handleSearch={handleSearch} books={books}/>
+                <Home search={search} setSearch={setSearch} handleSearch={handleSearch} books={books} loading={loading}/>
             </div>
         </div>
     )
