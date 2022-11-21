@@ -8,7 +8,7 @@ const BookList = ({books, loading}) => {
     return (
         <div className='bookList'>
             {
-                !!books.length ? <h3>Your search result . . .</h3> : <h3>Let's find your book . . .</h3>
+                books.length ? <h3>Your search result . . .</h3> : <h3>Let's find your book . . .</h3>
             }
 
             {
@@ -16,7 +16,7 @@ const BookList = ({books, loading}) => {
             }
 
             {
-                books.length &&
+                books.length ?
                 <div className="bookList-container">
                 {
                     books.map(book => {
@@ -27,12 +27,14 @@ const BookList = ({books, loading}) => {
                                 </div>
                                 <div className="bookList__card-title">
                                     <h6>{book.volumeInfo.title}</h6>
+                                    {/* <p>{book.volumeInfo.authors[0]}</p> */}
+                                    {/* <p>{book.volumeInfo.publishedDate}</p> */}
                                 </div>
                             </div>
                             )
                     })
                 }
-            </div>
+            </div> : <></>
             }
         </div>
     )

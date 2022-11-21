@@ -3,7 +3,7 @@
     justify-content: center;
     text-align: center;
     align-items: center;
-    background: url(../../images/header2.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 70%), rgba(0, 0, 0, 70%)), url(../../images/header2.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -14,10 +14,10 @@
 
 .header__content {
     /* background-color: rgba(255, 0, 0, 80%); */
-    background-color: #c5001a;
-    opacity: 80%;
+    background-color: black;
     padding: 25px;
     border-radius: 25px;
+    box-shadow: 0 0 25px orange;
 }
 
 h3 {

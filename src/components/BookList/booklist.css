@@ -5,11 +5,12 @@
     justify-content: center;
     padding-top: 50px;
     gap: 30px;
+    /* background-color: rgba(0, 0, 0, 50%); */
     /* background: linear-gradient(rgba(255, 0, 0, 30%), rgba(255, 0, 0, 30%)), url(https://www.toptal.com/designers/subtlepatterns/uploads/paisley.png); */
 }
 
 .bookList h3 {
-    color: #c5001a;
+    color: black
 }
 
 .bookList-container {
@@ -26,8 +27,14 @@
     justify-content: space-between;
     width: 20%;
     padding: 25px;
-    background-color: #c5001a;
-    border-radius: 20px;
+    /* background-color: #c5001a; */
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    /* background-color: black; */
+}
+
+.bookList__card:hover {
+    background: rgba(255, 153, 0, 80%)
 }
 
 .bookList__card-img {
@@ -41,21 +48,22 @@
     width: 150px;
     height: 160px;
     border-radius: 5px;
-    border: 2px solid #efefef;
+    box-shadow: 0px 0px 4px rgba(255, 0, 0, 0.9);
 }
 
 .bookList__card-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
-    background-color: rgba(255, 204, 0, 70%);
+    /* background-color: rgba(255, 255, 0, 70%); */
+    /* background-color: #c5001a; */
     height: 25%;
     border-radius: 5px;
     padding: 5px;
-    color: white;
+    /* color: white; */
 }
 
 .bookList__card-title h6  {
-    font-size: 12px;
+    font-size: 16px;
+    text-align: center;
 }
