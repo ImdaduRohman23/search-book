@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './booklist.css';
 import ReactLoading from 'react-loading';
+import ModalComp from '../Modal/ModalComp';
 
 const BookList = ({books, loading}) => {
-    console.log(books)
+    // console.log(books)
+
+    const [showModal, setShowModal] = useState(false);
+    const [item, setItem] = useState([]);
 
     return (
-        <div className='bookList'>
+        <div className='bookList' id='bookList'>
             {
                 books.length ? <h3>Your search result . . .</h3> : <h3>Let's find your book . . .</h3>
             }
 
             {
-                loading && <ReactLoading type='spin' color='red' height={667} width={375} />
+                loading && <ReactLoading type='spin' color='orange' height={100} width={100} />
             }
 
             {
@@ -21,16 +25,19 @@ const BookList = ({books, loading}) => {
                 {
                     books.map(book => {
                         return (
-                            <div className='bookList__card' key={book.id}>
-                                <div className="bookList__card-img">
-                                    <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail}  alt="" />
+                            <>
+                                <div className='bookList__card' key={book.id} onClick={() => {setShowModal(true); setItem(book)}}>
+                                    <div className="bookList__card-img">
+                                        <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail}  alt="" />
+                                    </div>
+                                    <div className="bookList__card-title">
+                                        <h6>{book.volumeInfo.title}</h6>
+                                        {/* <p>{book.volumeInfo.authors[0]}</p>
+                                        <p>{book.volumeInfo.publishedDate}</p> */}
+                                    </div>
                                 </div>
-                                <div className="bookList__card-title">
-                                    <h6>{book.volumeInfo.title}</h6>
-                                    {/* <p>{book.volumeInfo.authors[0]}</p> */}
-                                    {/* <p>{book.volumeInfo.publishedDate}</p> */}
-                                </div>
-                            </div>
+                                <ModalComp showModal={showModal} item={item} setShowModal={setShowModal}/>
+                            </>
                             )
                     })
                 }
