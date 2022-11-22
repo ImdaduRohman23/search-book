@@ -4,13 +4,11 @@ import ReactLoading from 'react-loading';
 import ModalComp from '../Modal/ModalComp';
 
 const BookList = ({books, loading}) => {
-    // console.log(books)
-
     const [showModal, setShowModal] = useState(false);
     const [item, setItem] = useState([]);
 
     return (
-        <div className='bookList' id='bookList'>
+        <div className='bookList'>
             {
                 books.length ? <h3>Your search result . . .</h3> : <h3>Let's find your book . . .</h3>
             }
@@ -25,7 +23,6 @@ const BookList = ({books, loading}) => {
                 {
                     books.map(book => {
                         return (
-                            <>
                                 <div className='bookList__card' key={book.id} onClick={() => {setShowModal(true); setItem(book)}}>
                                     <div className="bookList__card-img">
                                         <img src={book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.smallThumbnail}  alt="" />
@@ -36,13 +33,14 @@ const BookList = ({books, loading}) => {
                                         <p>{book.volumeInfo.publishedDate}</p> */}
                                     </div>
                                 </div>
-                                <ModalComp showModal={showModal} item={item} setShowModal={setShowModal}/>
-                            </>
                             )
                     })
                 }
             </div> : <></>
             }
+            
+            <ModalComp showModal={showModal} item={item} setShowModal={setShowModal}/>
+
         </div>
     )
 }
