@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 15px;
 }
 
 .modal-container {
@@ -28,13 +28,14 @@
     right: 1rem;
     outline: none;
     border: none;
-    font-size: 1rem;
+    font-size: 1.5rem;
     background-color: transparent;
 }
 
 .modal__content {
     margin-top: 30px;
     display: flex;
+    margin-bottom: 15px;
 }
 
 .content__img img{
@@ -44,7 +45,7 @@
 }
 
 .content__info h1 {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .content__info h3,
@@ -53,7 +54,22 @@
     font-size: 14px;
 }
 
+.content__info button {
+    font-size: 14px;
+    padding: 3px;
+    border: none;
+    color: white;
+    background: blue;
+    border-radius: 5px;
+}
+
 .modal-container h4{
     font-size: 14px;
     text-align: justify;
+}
+
+@media only screen and (max-width: 425px) {
+    .modal-container {
+        width: 90%;
+    }
 }

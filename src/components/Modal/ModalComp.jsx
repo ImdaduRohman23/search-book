@@ -2,8 +2,6 @@ import React from 'react';
 import './modal.css'
 
 const ModalComp = ({showModal, item, setShowModal}) => {
-    console.log(item)
-
     if(!showModal){
         return null
     }

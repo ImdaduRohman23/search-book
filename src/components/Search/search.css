@@ -26,4 +26,21 @@
 .fa-magnifying-glass {
     font-size: 25px;
     padding: 5px;
+    background: transparent;
+}
+
+@media only screen and (max-width: 600px) {
+    .search {
+        width: 200px;
+        padding: 3px;
+    }
+
+    .search__form-input {
+        width: 130px;
+    }
+
+    .fa-magnifying-glass {
+        font-size: 16px;
+        padding: 5px;
+    }
 }
