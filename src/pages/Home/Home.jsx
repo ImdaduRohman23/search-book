@@ -3,13 +3,13 @@ import BookList from '../../components/BookList/BookList';
 import Header from '../../components/Header/Header';
 import NavbarComp from '../../components/NavbarComp/NavbarComp';
 
-const Home = ({search, setSearch, handleSearch, books, loading}) => {
+const Home = () => {
 
     return (
         <div className="home">
             <NavbarComp />
-            <Header search={search} setSearch={setSearch} handleSearch={handleSearch} />
-            <BookList books={books} loading={loading}/>
+            <Header />
+            <BookList />
         </div>
     )
 }

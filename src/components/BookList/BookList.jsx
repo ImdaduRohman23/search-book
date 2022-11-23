@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, {useContext, useState } from 'react';
 import './booklist.css';
 import ReactLoading from 'react-loading';
 import ModalComp from '../Modal/ModalComp';
+import { MainContext } from '../../context/MainContext';
 
-const BookList = ({books, loading}) => {
+const BookList = () => {
     const [showModal, setShowModal] = useState(false);
     const [item, setItem] = useState([]);
+    const {books, loading} = useContext(MainContext);
 
     return (
         <div className='bookList'>

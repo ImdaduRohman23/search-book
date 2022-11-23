@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { MainContext } from '../../context/MainContext';
 import './search.css';
 
-const Search = ({search, setSearch, handleSearch}) => {
+const Search = () => {
+    const {search, handleSearch, setSearch} = useContext(MainContext);
     return (
         <div className='search' >
             <form onSubmit={handleSearch} className='search__form' >
